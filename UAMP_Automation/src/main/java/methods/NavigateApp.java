@@ -12,8 +12,12 @@ public class NavigateApp extends AppStart {
 		AndroidDriver<AndroidElement> driver=(AndroidDriver<AndroidElement>) Capabilities();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
-		driver.findElementByXPath("(//android.widget.TextView)[@text='Wake Up']").click();
-		driver.findElementByXPath("(//android.widget.TextView)[@text='Geisha']").click();
+		driver.findElementByXPath("(//android.widget.TextView)[@text='Wake Up']").click(); //Open First Album
+		driver.findElementByXPath("(//android.widget.TextView)[@text='Geisha']").click(); //Play Track
+		driver.findElementByXPath("(//android.widget.TextView)[@text='Geisha']").click(); //Stop Track
+		
+		driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Outro - Totally Here and Now (feat. Alan Watts)\"));");
+		
 	}
 
 }
